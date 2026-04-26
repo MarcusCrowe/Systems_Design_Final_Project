@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-header-text">
+        Manager: Reservation List
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Guest Name</th>
+                                <th>Check-In</th>
+                                <th>Check-Out</th>
+                                <th>Room Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for res in reservations %}
+                            <tr>
+                                <td>{{ res.id }}</td>
+                                <td class="fw-bold">{{ res.guest_name }}</td>
+                                <td>{{ res.check_in }}</td>
+                                <td>{{ res.check_out }}</td>
+                                <td>{{ res.room_type }}</td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="5" class="text-center text-muted">No reservations found.</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{{ url_for('index') }}" class="btn btn-secondary btn-lg">Back to Home</a>
+    </div>
+{% endblock %}

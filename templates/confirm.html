@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-header-text">
+        Confirmation Page
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <p class="fs-5">Dear <span class="fw-bold">{{ name }}</span>:</p>
+
+            <p class="fs-5 mt-4">
+                Thank you for choosing Panther hotel. We are pleased to confirm your room reservation from 
+                <span class="fw-bold border-bottom">
+                    {% if check_in %}{{ check_in }}{% else %}_/_/______{% endif %}
+                </span> 
+                to 
+                <span class="fw-bold border-bottom">
+                    {% if check_out %}{{ check_out }}{% else %}_/_/______{% endif %}
+                </span>.
+            </p>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{{ url_for('index') }}" class="btn btn-secondary btn-lg">Back to Home</a>
+    </div>
+{% endblock %}

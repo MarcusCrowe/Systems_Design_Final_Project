@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-header-text">
+        Welcome to the Panther Hotel
+    </div>
+
+    <div class="d-grid gap-3 col-6 mx-auto text-center">
+        <a href="{{ url_for('reserve') }}" class="btn btn-primary btn-lg shadow">Book a Room</a>
+        <a href="{{ url_for('list_reservations') }}" class="btn btn-primary btn-lg shadow">Manager</a>
+    </div>
+{% endblock %}

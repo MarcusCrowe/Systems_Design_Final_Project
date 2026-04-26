@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="page-header-text">
+        Panther Hotel Room Reservation
+    </div>
+
+    <form action="{{ url_for('reserve') }}" method="POST">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table table-borderless align-middle">
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-end fw-bold" style="width: 40%;">Name:</th>
+                            <td style="width: 60%;"><input type="text" name="name" class="form-control form-control-lg bg-secondary bg-opacity-25" placeholder="Your Name" required></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-end fw-bold">Check-in date:</th>
+                            <td><input type="text" name="check_in" class="form-control form-control-lg bg-secondary bg-opacity-25" placeholder="MM/DD/YYYY" required></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-end fw-bold">Check-out date:</th>
+                            <td><input type="text" name="check_out" class="form-control form-control-lg bg-secondary bg-opacity-25" placeholder="MM/DD/YYYY" required></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-end fw-bold">Room type:</th>
+                            <td><input type="text" name="room_type" class="form-control form-control-lg bg-secondary bg-opacity-25" placeholder="e.g., King Suite" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <button type="submit" class="btn btn-primary btn-lg shadow px-5">Submit</button>
+        </div>
+    </form>
+{% endblock %}

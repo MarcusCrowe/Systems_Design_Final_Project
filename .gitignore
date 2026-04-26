@@ -1,0 +1,19 @@
+# Python bytecode (compiled files)
+__pycache__/
+*.pyc
+
+# Local database (SQLite)
+# We ignore this so the repo stays clean; the app recreates it on run.
+instance/
+*.db
+
+# Environment variables (if you have secret keys)
+.env
+
+# Virtual environments
+venv/
+env/
+
+# IDE specific files
+.vscode/
+.idea/
